@@ -1,79 +1,118 @@
-import React, { useState } from 'react'
-import calcWiner from './Components/CalcWiner'
-import Square from './Components/Square/Square'
+import React, { useState } from "react";
+import calcWiner from "./Components/CalcWiner";
+import Square from "./Components/Square/Square";
 
 const Game = ({ xIsNext, squares, onPlay, historyLenghts, currentMove }) => {
   function handleClick(i) {
     if (squares[i] || calcWiner(squares)) {
-      return
-    } // i need to add animation off drowing circle or cross in my tic tack game
-    const nextSquares = squares.slice()
-    if (xIsNext) {
-      nextSquares[i] = 'X'
-    } else {
-      nextSquares[i] = 'O'
+      return;
     }
-    onPlay(nextSquares)
+    const nextSquares = squares.slice();
+    if (xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
+    onPlay(nextSquares);
   }
-  const winer = calcWiner(squares)
-  let gameStatus
-  let draw = historyLenghts === 10 && currentMove === 9
-  let lastWiner = winer && currentMove === 9
-  if (winer) {
-    gameStatus = 'Winner is ' + winer
+
+  const winnerInfo = calcWiner(squares);
+  const winner = winnerInfo?.winner;
+  const winningLine = winnerInfo?.line || [];
+
+  let gameStatus;
+  let draw = historyLenghts === 10 && currentMove === 9;
+  let lastWinner = winner && currentMove === 9;
+  if (winner) {
+    gameStatus = "Winner is " + winner;
   }
-  if (!winer) {
-    gameStatus = 'Next platyer : ' + (xIsNext ? 'X' : 'O')
+  if (!winner) {
+    gameStatus = "Next player: " + (xIsNext ? "X" : "O");
   }
   if (draw) {
-    gameStatus = 'Draw'
+    gameStatus = "Draw";
   }
-  if (lastWiner) {
-    gameStatus = 'Winner is ' + winer
+  if (lastWinner) {
+    gameStatus = "Winner is " + winner;
   }
-  console.log(currentMove)
 
   return (
     <div>
       <div className="status">{gameStatus}</div>
       <div className="board-row">
-        <Square value={squares[0]} squareChangeFunk={() => handleClick(0)} />
-        <Square value={squares[1]} squareChangeFunk={() => handleClick(1)} />
-        <Square value={squares[2]} squareChangeFunk={() => handleClick(2)} />
+        <Square
+          value={squares[0]}
+          squareChangeFunk={() => handleClick(0)}
+          isWinningSquare={winningLine.includes(0)}
+        />
+        <Square
+          value={squares[1]}
+          squareChangeFunk={() => handleClick(1)}
+          isWinningSquare={winningLine.includes(1)}
+        />
+        <Square
+          value={squares[2]}
+          squareChangeFunk={() => handleClick(2)}
+          isWinningSquare={winningLine.includes(2)}
+        />
       </div>
       <div className="board-row">
-        <Square value={squares[3]} squareChangeFunk={() => handleClick(3)} />
-        <Square value={squares[4]} squareChangeFunk={() => handleClick(4)} />
-        <Square value={squares[5]} squareChangeFunk={() => handleClick(5)} />
+        <Square
+          value={squares[3]}
+          squareChangeFunk={() => handleClick(3)}
+          isWinningSquare={winningLine.includes(3)}
+        />
+        <Square
+          value={squares[4]}
+          squareChangeFunk={() => handleClick(4)}
+          isWinningSquare={winningLine.includes(4)}
+        />
+        <Square
+          value={squares[5]}
+          squareChangeFunk={() => handleClick(5)}
+          isWinningSquare={winningLine.includes(5)}
+        />
       </div>
       <div className="board-row">
-        <Square value={squares[6]} squareChangeFunk={() => handleClick(6)} />
-        <Square value={squares[7]} squareChangeFunk={() => handleClick(7)} />
-        <Square value={squares[8]} squareChangeFunk={() => handleClick(8)} />
+        <Square
+          value={squares[6]}
+          squareChangeFunk={() => handleClick(6)}
+          isWinningSquare={winningLine.includes(6)}
+        />
+        <Square
+          value={squares[7]}
+          squareChangeFunk={() => handleClick(7)}
+          isWinningSquare={winningLine.includes(7)}
+        />
+        <Square
+          value={squares[8]}
+          squareChangeFunk={() => handleClick(8)}
+          isWinningSquare={winningLine.includes(8)}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 export default function App() {
-  const [history, setHistory] = useState([Array(9).fill(null)])
-  const [currentMove, setCurrentMove] = useState(0)
-  let currentSquares = history[currentMove]
-  let xIsNext = currentMove % 2 === 0
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [currentMove, setCurrentMove] = useState(0);
+  let currentSquares = history[currentMove];
+  let xIsNext = currentMove % 2 === 0;
 
   function handlePlay(nextSquares) {
-    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares]
-    setHistory(nextHistory)
-    setCurrentMove(nextHistory.length - 1)
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    setHistory(nextHistory);
+    setCurrentMove(nextHistory.length - 1);
   }
   function jumpTo(moveId) {
-    setCurrentMove(moveId)
+    setCurrentMove(moveId);
   }
   const movesList = history.map((squares, move) => {
-    let description = 'Go to move # '
+    let description = "Go to move # ";
     if (move > 0) {
-      description += move
+      description += move;
     } else {
-      description = 'Go to Game Srart'
+      description = "Go to Game Srart";
     }
     return (
       <li key={move}>
@@ -81,8 +120,8 @@ export default function App() {
           {description}
         </button>
       </li>
-    )
-  })
+    );
+  });
   return (
     <div className="game">
       <div className="game-board">
@@ -98,5 +137,5 @@ export default function App() {
         <ol>{movesList}</ol>
       </div>
     </div>
-  )
+  );
 }

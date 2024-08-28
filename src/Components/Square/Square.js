@@ -1,10 +1,15 @@
-import React from 'react'
-import './square.css'
+import React from "react";
+import "./square.css";
 
-export default function Square({ value, squareChangeFunk }) {
+export default function Square({ value, squareChangeFunk, isWinningSquare }) {
   return (
-    <button className={`square button-55 ${value ? 'filled' : ''}`} onClick={squareChangeFunk}>
-      {value && <span className={`symbol ${value === 'X' ? 'cross' : 'circle'}`}>{value}</span>}
+    <button
+      className={`square button-55 ${value ? "filled" : ""} ${
+        isWinningSquare ? "winning-square" : ""
+      }`}
+      onClick={squareChangeFunk}
+    >
+      {value && <span className={`symbol ${value === "X" ? "cross" : "circle"}`}>{value}</span>}
     </button>
-  )
+  );
 }
