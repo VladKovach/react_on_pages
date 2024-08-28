@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import calcWiner from './Components/CalcWiner'
-import Square from './Components/Square'
+import Square from './Components/Square/Square'
 
 const Game = ({ xIsNext, squares, onPlay, historyLenghts, currentMove }) => {
   function handleClick(i) {
     if (squares[i] || calcWiner(squares)) {
       return
-    }
+    } // i need to add animation off drowing circle or cross in my tic tack game
     const nextSquares = squares.slice()
     if (xIsNext) {
       nextSquares[i] = 'X'
