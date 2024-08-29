@@ -1,141 +1,14 @@
 import React, { useState } from "react";
-import calcWiner from "./Components/CalcWiner";
-import Square from "./Components/Square/Square";
+import Introduction from "./Components/Introduction/Introduction";
+import TicTack from "./Components/TicTack/TicTack";
+import PersonalInfo from "./Components/PersonalInfo/PersonalInfo";
 
-const Game = ({ xIsNext, squares, onPlay, historyLenghts, currentMove }) => {
-  function handleClick(i) {
-    if (squares[i] || calcWiner(squares)) {
-      return;
-    }
-    const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = "X";
-    } else {
-      nextSquares[i] = "O";
-    }
-    onPlay(nextSquares);
-  }
-
-  const winnerInfo = calcWiner(squares);
-  const winner = winnerInfo?.winner;
-  const winningLine = winnerInfo?.line || [];
-
-  let gameStatus;
-  let draw = historyLenghts === 10 && currentMove === 9;
-  let lastWinner = winner && currentMove === 9;
-  if (winner) {
-    gameStatus = "Winner is " + winner;
-  }
-  if (!winner) {
-    gameStatus = "Next player: " + (xIsNext ? "X" : "O");
-  }
-  if (draw) {
-    gameStatus = "Draw";
-  }
-  if (lastWinner) {
-    gameStatus = "Winner is " + winner;
-  }
-
-  return (
-    <div>
-      <div className="status">{gameStatus}</div>
-      <div className="board-row">
-        <Square
-          value={squares[0]}
-          squareChangeFunk={() => handleClick(0)}
-          isWinningSquare={winningLine.includes(0)}
-        />
-        <Square
-          value={squares[1]}
-          squareChangeFunk={() => handleClick(1)}
-          isWinningSquare={winningLine.includes(1)}
-        />
-        <Square
-          value={squares[2]}
-          squareChangeFunk={() => handleClick(2)}
-          isWinningSquare={winningLine.includes(2)}
-        />
-      </div>
-      <div className="board-row">
-        <Square
-          value={squares[3]}
-          squareChangeFunk={() => handleClick(3)}
-          isWinningSquare={winningLine.includes(3)}
-        />
-        <Square
-          value={squares[4]}
-          squareChangeFunk={() => handleClick(4)}
-          isWinningSquare={winningLine.includes(4)}
-        />
-        <Square
-          value={squares[5]}
-          squareChangeFunk={() => handleClick(5)}
-          isWinningSquare={winningLine.includes(5)}
-        />
-      </div>
-      <div className="board-row">
-        <Square
-          value={squares[6]}
-          squareChangeFunk={() => handleClick(6)}
-          isWinningSquare={winningLine.includes(6)}
-        />
-        <Square
-          value={squares[7]}
-          squareChangeFunk={() => handleClick(7)}
-          isWinningSquare={winningLine.includes(7)}
-        />
-        <Square
-          value={squares[8]}
-          squareChangeFunk={() => handleClick(8)}
-          isWinningSquare={winningLine.includes(8)}
-        />
-      </div>
-    </div>
-  );
-};
 export default function App() {
-  const [history, setHistory] = useState([Array(9).fill(null)]);
-  const [currentMove, setCurrentMove] = useState(0);
-  let currentSquares = history[currentMove];
-  let xIsNext = currentMove % 2 === 0;
-
-  function handlePlay(nextSquares) {
-    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
-    setHistory(nextHistory);
-    setCurrentMove(nextHistory.length - 1);
-  }
-  function jumpTo(moveId) {
-    setCurrentMove(moveId);
-  }
-  const movesList = history.map((squares, move) => {
-    let description = "Go to move # ";
-    if (move > 0) {
-      description += move;
-    } else {
-      description = "Go to Game Srart";
-    }
-    return (
-      <li key={move}>
-        <button className="button-30" onClick={() => jumpTo(move)}>
-          {description}
-        </button>
-      </li>
-    );
-  });
   return (
-    <div className="game">
-      <div className="game-board">
-        <Game
-          xIsNext={xIsNext}
-          squares={currentSquares}
-          onPlay={handlePlay}
-          historyLenghts={history.length}
-          currentMove={currentMove}
-        />
-      </div>
-      <div className="game-info">
-        <ol>{movesList}</ol>
-      </div>
+    <div className="main_page_wrapper">
+      <Introduction />
+      <PersonalInfo/>
+      <TicTack />
     </div>
   );
 }

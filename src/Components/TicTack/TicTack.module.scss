@@ -1,0 +1,16 @@
+.game {
+  display: flex;
+  justify-content: center;
+} 
+.game_board {
+  width: 50%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+.game_info {
+  margin-top: 25px;
+  padding-left: 50px;
+  max-height: 500px;
+  width: 50%;
+}

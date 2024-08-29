@@ -1,0 +1,54 @@
+.intro_wrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff);
+  overflow: hidden;
+  color: #fff;
+
+  text-align: center;
+}
+
+.text_container {
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out forwards;
+  font-size: calc(25px + (120 - 25) * ((100vw - 320px) / (1700 - 320)));
+  width: 30%;
+  text-align: left;
+  position: absolute;
+}
+
+.text_1 {
+  top: 10%;
+  left: 35%;
+  animation-delay: 0s;
+}
+
+.text_2 {
+  top: 30%;
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.text_3 {
+  top: 50%;
+  left: 35%;
+  animation-delay: 2s;
+}
+
+.text_4 {
+  top: 70%;
+  left: 50%;
+  animation-delay: 3s;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

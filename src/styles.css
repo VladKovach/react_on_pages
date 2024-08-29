@@ -1,90 +1,86 @@
+/* CSS Reset */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-  margin: 20px;
+/* Body */
+body,html {
   padding: 0;
-  background-color: black;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-  margin-top: 0;
-  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  font-weight: normal; /* Remove default bold */
+}
+
+/* Lists */
+ul,
+ol {
+  margin: 0;
+  padding-left: 20px;
+  list-style-position: inside;
+}
+
+/* Paragraphs */
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Tables */
+
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
 }
 
 code {
   font-size: 1.2em;
 }
+/* fonts */
 
-ul {
-  padding-left: 20px;
+@font-face {
+  font-family: "Dancing Script";
+  src: url("./assets/fonts/DancingScript-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+.beauty_font {
+  font-family: "Dancing Script", sans-serif;
+  font-size: 44px;
+  font-weight: 500;
+}
+/* fonts */
 
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 100px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 120px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 120px;
-}
-
-.status {
-  margin-bottom: 10px;
-  color: white;
-  font-size: 38px;
-  text-align: center;
-  font-family: cursive;
-}
-.game {
-  display: flex;
-  justify-content: center;
-}
-.game-board {
-  width: 50%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-}
-.game-info {
-  margin-top: 25px;
-  padding-left: 50px;
-  max-height: 500px;
-  width: 50%;
-}
+/* Additional resets as needed */
 
 /* Beauty Button */
 .button-30 {
@@ -93,13 +89,13 @@ ul {
   background-color: #fcfcfd;
   border-radius: 4px;
   border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
   color: #36395a;
   cursor: pointer;
   display: inline-flex;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   height: 40px;
   justify-content: center;
   line-height: 1;
@@ -125,8 +121,8 @@ ul {
 }
 
 .button-30:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 

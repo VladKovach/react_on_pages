@@ -1,5 +1,5 @@
 import React from "react";
-import "./square.css";
+import "./square.scss";
 
 export default function Square({ value, squareChangeFunk, isWinningSquare }) {
   return (
