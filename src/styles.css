@@ -11,6 +11,8 @@ body,html {
   margin: 0;
   width: 100%;
   overflow-x: hidden;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff);
+  color: #fff;
 
 }
 
@@ -81,7 +83,10 @@ code {
 /* fonts */
 
 /* Additional resets as needed */
-
+.main_page_wrapper{
+  max-width: 2000px;
+  margin: 0 auto;
+}
 /* Beauty Button */
 .button-30 {
   align-items: center;
