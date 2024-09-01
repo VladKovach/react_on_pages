@@ -16,6 +16,11 @@ export default function TicTack() {
   function jumpTo(moveId) {
     setCurrentMove(moveId);
   }
+  const handleGameTypeClick = (type) => {
+    if (type === "alone") {// handle game type
+    } else {
+    }
+  };
   const movesList = history.map((squares, move) => {
     let description = "Go to move # ";
     if (move > 0) {
@@ -32,16 +37,33 @@ export default function TicTack() {
     );
   });
   return (
-    <div className={classes.game}>
-      <Game
-        xIsNext={xIsNext}
-        squares={currentSquares}
-        onPlay={handlePlay}
-        historyLenghts={history.length}
-        currentMove={currentMove}
-      />
-      <div className={classes.game_info}>
-        <ol>{movesList}</ol>
+    <div className={classes.game_wrapper}>
+      <div className={classes.game_variant}>
+        <p className={classes.text}>Choose how you want to play:</p>
+        <button
+          className={`${classes.how_to_play_btn} button-30`}
+          onClick={() => handleGameTypeClick("alone")}
+        >
+          Alone
+        </button>
+        <button
+          className={`${classes.how_to_play_btn} button-30`}
+          onClick={() => handleGameTypeClick("someone")}
+        >
+          With someone
+        </button>
+      </div>
+      <div className={classes.game}>
+        <Game
+          xIsNext={xIsNext}
+          squares={currentSquares}
+          onPlay={handlePlay}
+          historyLenghts={history.length}
+          currentMove={currentMove}
+        />
+        <div className={classes.game_info}>
+          <ol>{movesList}</ol>
+        </div>
       </div>
     </div>
   );

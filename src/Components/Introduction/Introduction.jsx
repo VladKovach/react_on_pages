@@ -7,7 +7,7 @@ const Introduction = () => {
       <div className={`${classes.text_container} ${classes.text_1}`}>Hi</div>
       <div className={`${classes.text_container} ${classes.text_2}`}>I am Vlad</div>
       <div className={`${classes.text_container} ${classes.text_3}`}>and</div>
-      <div className={`${classes.text_container} ${classes.text_4}`}>This is my page</div>
+      <div className={`${classes.text_container} ${classes.text_4}`}>This is my portfolio</div>
     </div>
   );
 };

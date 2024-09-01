@@ -1,6 +1,22 @@
+.game_wrapper{
+  text-align: center;
+}
+.game_variant{
+  margin-top: 20px;
+  text-align: center;
+  .text{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.how_to_play_btn{
+  margin: 0 10px;
+}
 .game {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 } 
 .game_board {
   width: 50%;
@@ -12,5 +28,4 @@
   margin-top: 25px;
   padding-left: 50px;
   max-height: 500px;
-  width: 50%;
 }
