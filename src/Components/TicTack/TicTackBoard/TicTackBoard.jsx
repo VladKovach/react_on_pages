@@ -2,7 +2,7 @@ import React from "react";
 import calcWiner from "../../CalcWiner";
 import Square from "../Square/Square";
 import classes from "./TicTackBoard.module.scss";
-const TicTackBoard = ({ xIsNext, squares, onPlay, historyLenghts, currentMove }) => {
+const TicTackBoard = ({ xIsNext, squares, onPlay, historyLenghts, currentMove, isSingleGame }) => {
   function handleClick(i) {
     if (squares[i] || calcWiner(squares)) {
       return;
@@ -22,11 +22,17 @@ const TicTackBoard = ({ xIsNext, squares, onPlay, historyLenghts, currentMove })
 
   let gameStatus;
   let draw = historyLenghts === 10 && currentMove === 9;
+  
+  
   let lastWinner = winner && currentMove === 9;
+  
+  if (isSingleGame && !draw) {
+    gameStatus = "Go one, let's find out who will win!";
+  }
   if (winner) {
     gameStatus = "Winner is " + winner;
   }
-  if (!winner) {
+  if (!winner && !isSingleGame) {
     gameStatus = "Next player: " + (xIsNext ? "X" : "O");
   }
   if (draw) {

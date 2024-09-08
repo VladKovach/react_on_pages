@@ -8,7 +8,8 @@ export default function App() {
     <div className="main_page_wrapper">
       <Introduction />
       <PersonalInfo />
-      <p className="project_title "> LET'S HAVE SOME FUN AND PLAY GAME!</p>
+      <p className="project_title">HERE IS SOME OF MY WORKS :</p>
+      <p className="project_title ">Tic-Tac-Toe</p>
       <TicTack />
       <PosterPrint/>
     </div>
