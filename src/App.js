@@ -3,6 +3,7 @@ import Introduction from "./Components/Introduction/Introduction";
 import TicTack from "./Components/TicTack/TicTack";
 import PersonalInfo from "./Components/PersonalInfo/PersonalInfo";
 import { PosterPrint } from "./Components/PosterPrint/PosterPrint";
+import { PlantShop } from "./Components/PlantShop/PlantShop";
 export default function App() {
   return (
     <div className="main_page_wrapper">
@@ -12,6 +13,7 @@ export default function App() {
       <p className="project_title ">Tic-Tac-Toe</p>
       <TicTack />
       <PosterPrint/>
+      <PlantShop/>
     </div>
   );
 }
