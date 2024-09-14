@@ -1,7 +1,6 @@
 import React from "react";
-import classes from "./posterPrint.module.scss";
-import poster from "..//..//assets/images/posterPrint.png";
-
+import classes from "..//project.module.scss";
+import poster from "..//..//..//assets/images/posterPrint.png"; 
 export const PosterPrint = () => {
   return (
     <div className={classes.wrapper}>

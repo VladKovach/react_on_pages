@@ -1,16 +1,20 @@
 import React from "react";
+import classes from "../project.module.scss";
+import plantShop from "..//..//..//assets/images/plantShop.png";
 
-import classes from "./plantShop.module.scss";
 export const PlantShop = () => {
-  return ( 
+  return (
     <div className={classes.wrapper}>
       <p className={`${classes.title} project_title`}>PlantShop</p>
+      <a href="https://vladkovach.github.io/plantShop" target="_blank" rel="noopener noreferrer">
+        <img className={classes.siteImg} src={plantShop} alt="site page" />
+      </a>
       <p className={classes.description}>
-        Here you can review
+        Here you can review and test{" "}
         <a href="https://vladkovach.github.io/plantShop" target="blank" className={classes.link}>
-          site
+          layout
         </a>
-        , in the development of which I participated
+        , I've maded
       </p>
     </div>
   );
