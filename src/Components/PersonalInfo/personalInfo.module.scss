@@ -19,22 +19,22 @@
 }
 
 .my_foto {
-  border-radius: 15% 1%; // Keeps the circular shape
-  border: 5px solid rgba(255, 255, 255, 0.6); // Semi-transparent border
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); // Soft shadow
-  max-width: 100%; // Ensures the image is responsive
-  height: auto; // Maintains the aspect ratio
-  transition: transform 0.3s ease; // Smooth transition effect
+  border-radius: 15% 1%;
+  border: 5px solid rgba(255, 255, 255, 0.6); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+  max-width: 100%; 
+  height: auto; 
+  transition: transform 0.3s ease; 
 }
 
 .my_foto:hover {
-  transform: scale(1.05); // Slight zoom on hover
+  transform: scale(1.05); 
 }
 
 @media (max-width: 768px) {
   .my_info_container {
-    flex-direction: column; // Stack elements vertically on smaller screens
-    text-align: center; // Center the text for better readability
+    flex-direction: column; 
+    text-align: center; 
   }
 
   .info {
