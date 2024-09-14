@@ -4,6 +4,7 @@ import TicTack from "./Components/TicTack/TicTack";
 import PersonalInfo from "./Components/PersonalInfo/PersonalInfo";
 import { PosterPrint } from "./Components/Projects/PosterPrint/PosterPrint";
 import { PlantShop } from "./Components/Projects/PlantShop/PlantShop";
+import CardGalery from "./Components/Projects/CardGalery/CardGalery";
 export default function App() {
   return (
     <div className="main_page_wrapper">
@@ -14,6 +15,7 @@ export default function App() {
       <TicTack />
       <PosterPrint />
       <PlantShop />
+      <CardGalery />
     </div>
   );
 }
