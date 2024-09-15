@@ -33,8 +33,10 @@ export default function TicTack() {
   const handleGameTypeClick = (type) => {
     if (type === "alone") {
       setIsSingleGame(true);
+      setHistory([Array(9).fill(null)]);
     } else {
       setIsSingleGame(false);
+      setHistory([Array(9).fill(null)]);
     }
     setCurrentMove(0);
   };
@@ -81,9 +83,13 @@ export default function TicTack() {
           currentMove={currentMove}
           isSingleGame={isSingleGame}
         />
-        <div className={classes.game_info}>
-          <ol>{movesList}</ol>
-        </div>
+        {!isSingleGame ? (
+          <div className={classes.game_info}>
+            <ol>{movesList}</ol>
+          </div>
+        ) : (
+          false
+        )}
       </div>
     </div>
   );

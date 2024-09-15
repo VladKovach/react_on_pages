@@ -1,22 +1,24 @@
 .wrapper {
   position: relative;
   display: flex;
-  background-color: #1f1f1f;
-  height: 100vh;
-  margin: 0;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  height: 80vh;
+  margin: 0;
 }
 .cardComponent {
-  height: 95vh;
+  margin-top: 20px;
+  height: 80vh;
   width: 90vw;
+  max-height: 1000px;
+  max-width: 2000px;
   display: flex;
   justify-content: space-between;
 }
 .cardItem {
   height: 100%;
   flex: 1;
-  border-radius: 20px;
+  border-radius: 10% 4%;
   margin-left: 10px;
   cursor: pointer;
   background-size: cover;
@@ -24,10 +26,11 @@
   background-position: center;
   transition: 0.3s ease-in-out;
   position: relative;
+  &.active {
+    flex: 10;
+  }
 }
-.cardItem.active {
-  flex: 10;
-}
+
 .cardHeader {
   font-size: 35px;
   color: rgb(255, 255, 255);
@@ -35,8 +38,11 @@
   bottom: 0;
   left: 20px;
   opacity: 0;
-}
-.cardHeader.active {
-  opacity: 1;
-  transition: opacity 0.3s ease-in 0.3s;
+  &.active {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+  }
+  @media (max-width: 2000px) {
+    font-size: calc(12px + (35 - 12) * ((100vw - 320px) / (2000 - 320)));
+  }
 }
