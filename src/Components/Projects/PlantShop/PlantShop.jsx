@@ -5,7 +5,7 @@ import plantShop from "..//..//..//assets/images/plantShop.png";
 export const PlantShop = () => {
   return (
     <div className={classes.wrapper}>
-      <p className={`${classes.title} project_title`}>PlantShop</p>
+      <p className="project_title">PlantShop (layout)</p>
       <a href="https://vladkovach.github.io/plantShop" target="_blank" rel="noopener noreferrer">
         <img className={classes.siteImg} src={plantShop} alt="site page" />
       </a>

@@ -59,6 +59,8 @@ export default function TicTack() {
 
   return (
     <div className={classes.game_wrapper}>
+      <p className="project_title">Tic-Tac-Toe</p>
+
       <div className={classes.game_variant}>
         <p className={classes.text}>Choose how you want to play:</p>
         <button
