@@ -205,9 +205,27 @@ code {
 .button-55:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
-
-.project_title{
+.works_title{
+  margin-top: 60px;
+  font-size: 35px;
+text-align: center;
+}
+.project_title {
   margin-top: 20px;
   text-align: center;
   font-size: 35px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.project_title::before,
+.project_title::after {
+  content: "";
+  display: inline-block;
+  width: 30%; 
+  height: 2px; /* Thickness of the line */
+  background-color: #fff; /* Solid black color for the line */
+  margin: 0 20px; /* Adjust spacing between the text and lines */
+  vertical-align: middle;
 }
