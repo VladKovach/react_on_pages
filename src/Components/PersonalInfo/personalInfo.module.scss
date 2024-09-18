@@ -11,7 +11,7 @@
 
 .info {
   font-family: cursive;
-  margin-right: 20px;
+  margin: 0 20px;
   flex: 1;
   font-size: 20px;
   line-height: 1.6;
@@ -20,25 +20,24 @@
 
 .my_foto {
   border-radius: 15% 1%;
-  border: 5px solid rgba(255, 255, 255, 0.6); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-  max-width: 100%; 
-  height: auto; 
-  transition: transform 0.3s ease; 
+  border: 5px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .my_foto:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
   .my_info_container {
-    flex-direction: column; 
-    text-align: center; 
+    flex-direction: column;
+    text-align: center;
   }
 
   .info {
-    
     margin-right: 0;
     margin-bottom: 20px;
   }

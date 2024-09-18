@@ -7,11 +7,24 @@ const PersonalInfo = () => {
     <div className={classes.info_wrapper}>
       <div className={classes.my_info_container}>
         <div className={classes.info}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nemo iusto ea, aliquam
-          sint consequatur similique, dolores dignissimos accusantium corrupti ex commodi corporis
-          repudiandae quas sed mollitia blanditiis possimus tenetur, reprehenderit neque tempora!
-          Excepturi eaque provident tempore voluptatibus a eum sed, distinctio qui libero
-          repudiandae, quibusdam cum impedit dolorem iste?
+          <p>
+            I am Vladyslav Kovachuk, a highly motivated junior+ front-end developer with a strong
+            passion for continuous learning and growth.
+          </p>
+          <p>
+            <strong>Stack:</strong> HTML, CSS, JS, TypeScript, Sass, CSS-in-JS, Styled Componend,
+            JQuery, React, Redux, RTK, NextJS, Vue, NuxtJS, Git, GitHub.
+          </p>
+          <p>
+            <strong> Education:</strong> Master of Science. Yzhorod National University.
+            Specialization: Cybersecurity.
+          </p>
+          <p>
+            <strong>Languages:</strong> Ukrainian: Native <br />
+            English: B1 <br />
+            German: B1 <br />
+            Russian: B1
+          </p>
         </div>
         <img src={myFoto} width={400} alt="My Foto" className={classes.my_foto} />
       </div>
