@@ -21,9 +21,8 @@ function CardGalery() {
     if (card.active) card.name = "Aesthetics Piano";
 
     return (
-      <div
+      <button
         onClick={() => {
-          console.log("awdwd");
 
           const newActiveList = cardActiveList.map((act, indx) => (act = false));
           newActiveList[index] = true;
@@ -38,7 +37,7 @@ function CardGalery() {
         >
           {card.name}
         </h3>
-      </div>
+      </button>
     );
   });
   return (
