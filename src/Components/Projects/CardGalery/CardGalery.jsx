@@ -23,8 +23,8 @@ function CardGalery() {
     return (
       <div
         onClick={() => {
-          console.log('awdwd');
-          
+          console.log("awdwd");
+
           const newActiveList = cardActiveList.map((act, indx) => (act = false));
           newActiveList[index] = true;
           setCardActiveList(newActiveList);
@@ -33,7 +33,9 @@ function CardGalery() {
         key={index}
         style={{ backgroundImage: `url(${card.src})` }}
       >
-        <h3 className={card.active ? `${classes.cardHeader} ${classes.active}` : classes.cardHeader}>
+        <h3
+          className={card.active ? `${classes.cardHeader} ${classes.active}` : classes.cardHeader}
+        >
           {card.name}
         </h3>
       </div>
@@ -41,7 +43,11 @@ function CardGalery() {
   });
   return (
     <div className={classes.wrapper}>
-      <p className="project_title">Animated Gallery</p>
+      <div className="project_title_container">
+        <span className="line" />
+        <p>Animated Gallery</p>
+        <span className="line" />
+      </div>
       <div className={classes.cardComponent}>{cardList}</div>
     </div>
   );

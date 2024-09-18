@@ -4,7 +4,11 @@ import restourantImg from "..//..//..//assets/images/restourant.png";
 export const Restourant = () => {
   return (
     <div className={classes.wrapper}>
-      <p className="project_title">Restourant (layout)</p>
+      <div className="project_title_container">
+        <span className="line" />
+        <p>Restourant (layout)</p>
+        <span className="line" />
+      </div>
       <a
         href="https://vladkovach.github.io/restourant_learn/"
         target="_blank"

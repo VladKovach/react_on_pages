@@ -135,8 +135,8 @@ code {
   line-height: 1;
   list-style: none;
   overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 100%;
+  align-items: center;
   position: relative;
   text-align: left;
   text-decoration: none;
@@ -146,7 +146,7 @@ code {
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow, transform;
-  font-size: 18px;
+  font-size: inherit;
 }
 
 .button-30:focus {
@@ -205,27 +205,39 @@ code {
 .button-55:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
-.works_title{
+.works_title {
   margin-top: 60px;
   font-size: 35px;
-text-align: center;
+  text-align: center;
 }
-.project_title {
+.project_title_container {
   margin-top: 20px;
   text-align: center;
   font-size: 35px;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
-
-.project_title::before,
-.project_title::after {
-  content: "";
+.project_title_container p {
   display: inline-block;
-  width: 30%; 
-  height: 2px; /* Thickness of the line */
-  background-color: #fff; /* Solid black color for the line */
-  margin: 0 20px; /* Adjust spacing between the text and lines */
+  /* width: 30%; */
+  margin: 0 20px;
+}
+
+.project_title_container .line {
+  display: inline-block;
+  width: 30%;
+  height: 2px;
+  background-color: #fff;
   vertical-align: middle;
+}
+@media (max-width: 767px) {
+  .project_title_container {
+    font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (767 - 320)));
+  }
+  .works_title {
+    font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (767 - 320)));
+  }
 }

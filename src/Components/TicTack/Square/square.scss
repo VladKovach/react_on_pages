@@ -10,6 +10,10 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  @media (max-width: 767px) {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .square.filled {
@@ -22,6 +26,9 @@
   animation: draw 0.5s forwards ease-in-out;
   font-size: 50px;
   font-family: cursive;
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
 }
 
 .symbol.cross {

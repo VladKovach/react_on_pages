@@ -13,11 +13,27 @@
 
 .how_to_play_btn {
   margin: 0 10px;
+  width: 200px;
 }
 .game {
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  font-size: 18px;
+  & ol {
+    list-style-type: none;
+    width: 200px;
+  }
+
+  @media (max-width: 767px) {
+    .game_info {
+      padding-left: 0;
+    }
+    ol {
+      max-width: 150px;
+      font-size: 14px;
+    }
+  }
 }
 .game_board {
   width: 50%;

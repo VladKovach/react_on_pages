@@ -4,7 +4,11 @@ import poster from "..//..//..//assets/images/posterPrint.png";
 export const PosterPrint = () => {
   return (
     <div className={classes.wrapper}>
-      <p className="project_title">PosterPrint</p>
+      <div className="project_title_container">
+        <span className="line" />
+        <p>PosterPrint</p>
+        <span className="line" />
+      </div>
       <a href="https://posterprint.com.ua" target="_blank" rel="noopener noreferrer">
         <img className={classes.siteImg} src={poster} alt="site page" />
       </a>
